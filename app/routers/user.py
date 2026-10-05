@@ -13,6 +13,10 @@ def crearUsuario(user: schemas.Users, db: Session = Depends(get_db)):
     hashed_password = utils.hash(user.password)
     user.password = hashed_password
     
+    if db.query(models.Users).filter(models.Users.username == user.username).first():
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
+                            detail=f"El usuario {user.username} ya existe")
+    
     new_user=models.Users(**user.dict())    
     db.add(new_user)
     db.commit()
