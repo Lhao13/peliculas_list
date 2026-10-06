@@ -1,6 +1,6 @@
 # My Movie Watch List
 
-**Fecha de creación:** 2024/11
+**Fecha de creación:** 2024/04
 
 Aplicación para llevar un registro personal de películas vistas y guardar películas que se quieren ver más adelante. Permite consultar títulos y sus datos desde [TMDB](https://www.themoviedb.org/) y guardar listas separadas por usuario.
 
